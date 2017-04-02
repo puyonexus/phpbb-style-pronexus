@@ -29,7 +29,7 @@
 	Modified by:
 -->
 
-<!-- IF S_ALLOW_CDN -->
+{#<!-- IF S_ALLOW_CDN -->
 <script>
 	WebFontConfig = {
 		google: {
@@ -44,10 +44,11 @@
 		s.parentNode.insertBefore(wf, s);
 	})(document);
 </script>
-<!-- ENDIF -->
+<!-- ENDIF -->#}
 <link href="{T_FONT_AWESOME_LINK}" rel="stylesheet">
 <link href="{T_STYLESHEET_LINK}" rel="stylesheet">
 <link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet">
+<link href="/assets/css/common.css" rel="stylesheet">
 
 <!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
 	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
@@ -61,9 +62,9 @@
 	<link href="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
 <!-- ENDIF -->
 
-<!--[if lte IE 9]>
+{#<!--[if lte IE 9]>
 	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet">
-<![endif]-->
+<![endif]-->#}
 
 <!-- EVENT overall_header_head_append -->
 
@@ -76,10 +77,11 @@
 
 <!-- EVENT overall_header_body_before -->
 
-<div id="wrap" class="wrap">
+{#<div id="wrap" class="wrap">#}
 	<a id="top" class="top-anchor" accesskey="t"></a>
 	<div id="page-header">
-		<div class="headerbar" role="banner">
+		{% include 'pn_header.html' %}
+		{#<div class="headerbar" role="banner">
 		<!-- EVENT overall_header_headerbar_before -->
 			<div class="inner">
 
@@ -111,7 +113,7 @@
 
 			</div>
 			<!-- EVENT overall_header_headerbar_after -->
-		</div>
+		</div>#}
 		<!-- EVENT overall_header_navbar_before -->
 		<!-- INCLUDE navbar_header.html -->
 	</div>
@@ -120,12 +122,13 @@
 
 	<a id="start_here" class="anchor"></a>
 	<div id="page-body" class="page-body" role="main">
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-		<div id="information" class="rules">
-			<div class="inner">
-				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+		<div class="container">
+			<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+			<div id="information" class="rules">
+				<div class="inner">
+					<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+				</div>
 			</div>
-		</div>
-		<!-- ENDIF -->
+			<!-- ENDIF -->
 
-		<!-- EVENT overall_header_content_before -->
+			<!-- EVENT overall_header_content_before -->

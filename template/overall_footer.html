@@ -1,4 +1,5 @@
-		<!-- EVENT overall_footer_content_after -->
+			<!-- EVENT overall_footer_content_after -->
+		</div>
 	</div>
 
 <!-- EVENT overall_footer_page_body_after -->
@@ -6,13 +7,14 @@
 <div id="page-footer" class="page-footer" role="contentinfo">
 	<!-- INCLUDE navbar_footer.html -->
 
-	<div class="copyright">
+	<div class="copyright container">
 		<!-- EVENT overall_footer_copyright_prepend -->
 		{CREDIT_LINE}
 		<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
 		<!-- EVENT overall_footer_copyright_append -->
 		<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
-		<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+		{#<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->#}
+		<br>© 2007-2017 Puyo Nexus
 	</div>
 
 	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
@@ -33,7 +35,7 @@
 	</div>
 </div>
 
-</div>
+{#</div>#}
 
 <div>
 	<a id="bottom" class="anchor" accesskey="z"></a>
@@ -81,6 +83,8 @@
 			})});
 	</script>
 <!-- ENDIF -->
+
+<script src="/assets/js/common.min.js"></script>
 
 <!-- EVENT overall_footer_after -->
 
